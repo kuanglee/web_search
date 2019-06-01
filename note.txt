@@ -1,0 +1,2 @@
+Advance Laravel Autocomplete Search from Database - https://www.youtube.com/watch?v=2KzqesMzlxU
+Live search in Laravel using AJAX - https://www.youtube.com/watch?v=ld5HwiENA8k
