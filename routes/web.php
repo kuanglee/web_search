@@ -42,7 +42,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function() {
 
         Route::get('search' , 'DictionaryController@getViewSearchDictionary');
 
-        Route::get('ResultDictionary/{id}' ,'DictionaryController@getResultSearch');
+        Route::get('ResultDictionary/{id}/{key}' ,'DictionaryController@getResultSearch');
 
         Route::post('/autocomplete/fetch', 'DictionaryController@fetch')->name('autocomplete.fetch');
 

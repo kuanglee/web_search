@@ -11,9 +11,12 @@
                 <div class="form-group">
                     <label for="sel1">Select Language : </label>
                     <select class="form-control city" id="selectlanguage">
-                        <option value="japanese">Japanese</option>
-                        <option value="vietnamese">Vietnamese</option>
-                        <option value="english">English</option>
+                        <option value="vn-ja">VN - JA</option>
+                        <option value="vn-en">VN - EN</option>
+                        <option value="ja-vn">JA - VN</option>
+                        <option value="ja-vn">JA - EN</option>
+                        <option value="en-vn">EN - VN</option>
+                        <option value="en-ja">EN - JA</option>
                     </select>
                     {{ csrf_field() }}
                 </div>

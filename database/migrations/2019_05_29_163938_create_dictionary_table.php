@@ -17,6 +17,7 @@ class CreateDictionaryTable extends Migration
             $table->bigIncrements('id');
             $table->string('vietnamese');
             $table->string('japanese');
+            $table->string('english');
             $table->string('status');
             $table->timestamps();
         });
