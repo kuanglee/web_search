@@ -11,6 +11,7 @@
                 <div class="form-group">
                     <label for="sel1">Select Language : </label>
                     <select class="form-control city" id="selectlanguage">
+                        <option value="">Select Dictionary</option>
                         <option value="vn-ja">VN - JA</option>
                         <option value="vn-en">VN - EN</option>
                         <option value="ja-vn">JA - VN</option>
