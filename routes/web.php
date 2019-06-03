@@ -28,6 +28,7 @@ Route::get('logout' , function (){
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function() {
 
     Route::group(['prefix'=>'dictionary'],function(){
+
         Route::get('add' , 'DictionaryController@getView');
 
         Route::post('add','DictionaryController@postAddDictionary')->name('admin.dictionary.add');

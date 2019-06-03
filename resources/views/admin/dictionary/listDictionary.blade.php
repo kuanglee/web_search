@@ -23,9 +23,9 @@
                         <th>Vietnamese</th>
                         <th>Japanese</th>
                         <th>English</th>
-                        <th>Status</th>
+                        {{--<th>Status</th>--}}
                         <th>Created_at</th>
-                        <th>updated_at</th>
+                        {{--<th>updated_at</th>--}}
                         <th>Delete</th>
                         <th>Edit</th>
                     </tr>
@@ -37,9 +37,9 @@
                         <td>{{$dt->vietnamese}}</td>
                         <td>{{$dt->japanese}}</td>
                         <td>{{$dt->english}}</td>
-                        <td>{{$dt->status}}</td>
+                        {{--<td>{{$dt->status}}</td>--}}
                         <td>{{$dt->created_at}}</td>
-                        <td>{{$dt->updated_at}}</td>
+                        {{--<td>{{$dt->updated_at}}</td>--}}
                         <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/dictionary/delete/{{$dt->id}}" onclick="return confirm('Are you sure?')"> Delete</a></td>
                         <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/dictionary/edit/{{$dt->id}}">Edit</a></td>
                     </tr>

@@ -40,7 +40,7 @@ class DictionaryController extends Controller
     public function getResultSearch($id, $key)
     {
         $data = DB::table('dictionary')->find($id);
-        Log::debug("gia tri key " . $key);
+        //Log::debug("gia tri key " . $key);
 //        dd($data);
         return view('admin.dictionary.resultSearch', ['data' => $data, 'key' => $key]);
     }
@@ -110,13 +110,13 @@ class DictionaryController extends Controller
                 foreach ($data as $row) {
                     $id = $row->id;
                     if ($translate_arr['language'] == "vietnamese") {
-                        Log::debug(" gias tri cua test : vietnam");
+
                         $output .= '<li><a href="admin/dictionary/ResultDictionary/' . $id . '/' . $translate_arr['key'] . '">' . $row->vietnamese . '</a></li>';
                     } elseif ($translate_arr['language'] == "japanese") {
-                        Log::debug(" gias tri cua test : japoaneses");
+
                         $output .= '<li><a href="admin/dictionary/ResultDictionary/' . $id . '/' . $translate_arr['key'] . '">' . $row->japanese . '</a></li>';
                     } elseif ($translate_arr['language'] == "english") {
-                        Log::debug(" gias tri cua test : english");
+
                         $output .= '<li><a href="admin/dictionary/ResultDictionary/' . $id . '/' . $translate_arr['key'] . '">' . $row->english . '</a></li>';
                     }
 
