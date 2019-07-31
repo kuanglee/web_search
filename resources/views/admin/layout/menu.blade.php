@@ -32,6 +32,58 @@
                 <!-- /.nav-second-level -->
             </li>
 
+            <li>
+                <a href="admin/theloai/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Thể loại<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/theloai/danhsach">Danh Sách Thể loại</a>
+                    </li>
+                    <li>
+                        <a href="admin/theloai/them">Thêm thể loại</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
+            <li>
+                <a href="admin/loaitin/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Loại tin<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/loaitin/danhsach">Danh Sách Loại tin</a>
+                    </li>
+                    <li>
+                        <a href="admin/loaitin/them">Thêm Loại tin</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
+            <li>
+                <a href="admin/tintuc/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Tin Tức<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/tintuc/danhsach">Danh Sách Tin tức</a>
+                    </li>
+                    <li>
+                        <a href="admin/tintuc/them">Thêm Tin tức</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
+            <li>
+                <a href="admin/slide/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Slide<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/slide/danhsach">Danh Sách Tin tức</a>
+                    </li>
+                    <li>
+                        <a href="admin/slide/them">Thêm Tin tức</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
 
 
             
@@ -39,10 +91,10 @@
                 <a href="admin/user/danhsach"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Danh sách</a>
+                        <a href="#">List Account</a>
                     </li>
                     <li>
-                        <a href="#">Thêm</a>
+                        <a href="#">Add Account</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

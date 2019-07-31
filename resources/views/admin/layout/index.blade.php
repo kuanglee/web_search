@@ -81,6 +81,7 @@
                     var _token = $('input[name="_token"]').val();
                     var id = $(".city").val();
                     $.ajax({
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
                         url:"{{ route('autocomplete.fetch') }}",
                         method:"POST",
                         data:{query:query, _token:_token , id:id},
