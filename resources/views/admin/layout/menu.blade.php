@@ -36,7 +36,7 @@
                 <a href="admin/theloai/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Thể loại<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="admin/theloai/danhsach">Danh Sách Thể loại</a>
+                        <a href="admin/category/list">Danh Sách Thể loại</a>
                     </li>
                     <li>
                         <a href="admin/theloai/them">Thêm thể loại</a>
