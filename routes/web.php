@@ -59,7 +59,16 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function() {
         Route::get('edit_ajax/{id}' , 'CategoryController@edit_ajax');
         Route::post('edit_ajax' , 'CategoryController@edit_ajax')->name('admin.category.edit_ajax');
 
+    });
 
+    Route::group(['prefix'=>'typenew'],function(){
+        Route::get('list' , 'typenewController@listTypeNew');
+
+        Route::post('add_ajax' , 'typenewController@add_ajax')->name('admin.typenew.add_ajax');
+        Route::get('delete_typenew/{id}' ,  'typenewController@delete');
+
+        Route::get('edit_ajax/{id}' , 'typenewController@edit_ajax');
+        Route::post('edit_ajax' , 'typenewController@edit_ajax')->name('admin.typenew.edit_ajax');
 
     });
 

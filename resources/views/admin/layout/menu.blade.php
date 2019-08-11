@@ -46,15 +46,15 @@
             </li>
 
             <li>
-                <a href="admin/loaitin/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Loại tin<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="admin/loaitin/danhsach">Danh Sách Loại tin</a>
-                    </li>
-                    <li>
-                        <a href="admin/loaitin/them">Thêm Loại tin</a>
-                    </li>
-                </ul>
+                <a href="admin/typenew/list"><i class="fa fa-bar-chart-o fa-fw"></i> Loại tin<span class="fa arrow"></span></a>
+                {{--<ul class="nav nav-second-level">--}}
+                    {{--<li>--}}
+                        {{--<a href="admin/loaitin/danhsach">Danh Sách Loại tin</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="admin/loaitin/them">Thêm Loại tin</a>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
                 <!-- /.nav-second-level -->
             </li>
 

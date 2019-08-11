@@ -120,11 +120,6 @@
 
     <script>
         $('#edit_category').on('show.bs.modal', function (event) {
-
-
-
-
-             // alert("dsafd");
             var button = $(event.relatedTarget)
             var id = button.data('id')
             var id2 = button.data('id2');
@@ -140,23 +135,32 @@
             modal.find('.modal-body #name').val(Ten);
             modal.find('.modal-body #id2').val(id2);
             var _token = $('input[name="_token"]').val();
-            {{--$.ajax({--}}
-                {{--url:"{{'users/fetch'}}",--}}
-                {{--type : "post",--}}
-
-                {{--dataType:"text",--}}
-                {{--// data:{query:query, _token:_token , id:id},--}}
-                {{--data : {--}}
-                    {{--_token:_token , id:id--}}
-                {{--},--}}
-                {{--success : function (result){--}}
-                    {{--$('#result').html(result);--}}
-                {{--}--}}
-            {{--});--}}
 
         })
 
 
+
+    </script>
+
+    <script>
+        $('#edit_typenew').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var id2 = button.data('id2');
+
+            var TenKhongDau = button.data('TenKhongDau_edit')
+            var Ten = button.data('name')
+            // var dataShop = button.data('dataShop');
+            var modal = $(this)
+            console.log(Ten);
+
+            modal.find('.modal-body #id').val(id);
+            modal.find('.modal-body #TenKhongDau_edit').val(TenKhongDau);
+            modal.find('.modal-body #name').val(Ten);
+            modal.find('.modal-body #id2').val(id2);
+            var _token = $('input[name="_token"]').val();
+
+        })
 
     </script>
     @yield('script')
