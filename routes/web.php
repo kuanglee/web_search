@@ -50,6 +50,24 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function() {
         Route::post('/auto/select', 'DictionaryController@select')->name('auto.select');
     });
 
+    Route::group(['prefix' => 'categorys'] , function (){
+
+        Route::get('/',['as' => 'admin.categorys.index', 'uses' => 'CategorysController@index']);
+
+        Route::get('/add',['as' => 'admin.categorys.add', 'uses' => 'CategorysController@create']);
+
+        Route::get('/show/{id}',[  'as' => 'admin.categorys.show', 'uses' => 'CategorysController@show']);
+
+        Route::post('/store',['as' => 'admin.categorys.store', 'uses' => 'CategorysController@store']);
+
+        Route::get('/edit/{id}',['as' => 'admin.categorys.edit', 'uses' => 'CategorysController@edit']);
+
+        Route::patch('/update',['as' => 'admin.categorys.update', 'uses' => 'CategorysController@update']);
+
+        Route::delete('/destroy/{id}',['as'=>'admin.categorys.destroy','uses'=>'CategorysController@destroy']);
+
+    });
+
 
 
     Route::get('home' , function (){
