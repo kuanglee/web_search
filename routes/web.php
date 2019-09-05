@@ -60,6 +60,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function() {
 
         Route::post('/store',['as' => 'admin.categorys.store', 'uses' => 'CategorysController@store']);
 
+        Route::post('/updateAjax',['as' => 'admin.categorys.updateAjax', 'uses' => 'CategorysController@updateAjax']);
+
         Route::get('/edit/{id}',['as' => 'admin.categorys.edit', 'uses' => 'CategorysController@edit']);
 
         Route::patch('/update',['as' => 'admin.categorys.update', 'uses' => 'CategorysController@update']);

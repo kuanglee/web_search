@@ -9,6 +9,8 @@
                         <small>view</small>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Add
                         </button>
+
+
                     </h1>
                     {{--<div><button type="button" class="btn btn-success">Success</button></div>--}}
                 </div>
@@ -54,8 +56,14 @@
                                             class="btn btn-warning"><i class="fa fa-trash"></i></button>
                                 </form>
                             </td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a
-                                        href="admin/dictionary/edit/">Edit</a></td>
+
+                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href=""
+                                                                                     data-id="{{$category->id}}"
+                                                                                     data-Name="{{$category->Name}}"
+                                                                                     data-kuang="{{$category->Name}}"
+                                                                                     data-toggle="modal"
+                                                                                     data-target="#edit-modal">Edit</a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -84,7 +92,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="title">Name</label>
-                            <input type="text" class="form-control" name="name" id="name">
+                            <input type="text" class="form-control" name="Name" id="Name">
                         </div>
 
                     </div>
@@ -97,4 +105,66 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+    <!-- Attachment Modal -->
+    <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="edit-modal-label"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="edit-modal-label">Edit Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="attachment-body-content">
+                <form action="{{url('admin/categorys/updateAjax')}}" method="post">
+                    {{csrf_field()}}
+
+                        <div class="card text-white bg-dark mb-0">
+
+                            <div class="card-body" style="padding-left: 30px">
+
+
+                                <!-- id -->
+                                <!-- name -->
+                                <div class="form-group">
+                                    <label class="col-form-label" for="modal-input-name">ID</label>
+                                    <input type="text" name="id" class="form-control" disabled=""
+                                           id="id" required autofocus>
+                                </div>
+                                <!-- /name -->
+                                <!-- /id -->
+
+
+
+                                <!-- name -->
+                                <div class="form-group">
+                                    <label class="col-form-label" for="modal-input-name">Name</label>
+                                    <input type="Name" name="kuang" class="form-control"
+                                           id="kuang" required autofocus>
+                                </div>
+                                <!-- /name -->
+
+
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /Attachment Modal -->
 @endsection

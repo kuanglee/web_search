@@ -121,6 +121,36 @@
 
     </script>
 
+    <script>
+        $('#edit-modal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var Unmarker_name = button.data('Unmarker_name')
+            var Name = button.data('Name')
+            var Name2 = button.data('Name')
+            var kuang = button.data('kuang')
+            // alert(Unmarker_name)
+            // var dataShop = button.data('dataShop');
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id);
+            modal.find('.modal-body #Name').val(Name);
+            modal.find('.modal-body #kuang').val(kuang);
+            var _token = $('input[name="_token"]').val();
+            {{--$.ajax({--}}
+            {{--url:"{{'users/fetch'}}",--}}
+            {{--type : "post",--}}
+            {{--dataType:"text",--}}
+            {{--// data:{query:query, _token:_token , id:id},--}}
+            {{--data : {--}}
+            {{--_token:_token , id:id--}}
+            {{--},--}}
+            {{--success : function (result){--}}
+            {{--$('#result').html(result);--}}
+            {{--}--}}
+            {{--});--}}
+        })
+    </script>
+
     @yield('script')
 </body>
 

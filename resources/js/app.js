@@ -30,3 +30,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+$(document).on('click','.edit-modal',function(){
+    console.log("asdas");
+});

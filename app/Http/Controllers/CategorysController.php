@@ -12,6 +12,7 @@ use Carbon\Carbon;
 class CategorysController extends Controller
 {
     protected $category;
+
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +23,7 @@ class CategorysController extends Controller
     public function index()
     {
         $listCategorys = TheLoai::all();
-        return view('admin.theloai.list' , compact('listCategorys'));
+        return view('admin.theloai.list', compact('listCategorys'));
     }
 
     /**
@@ -39,7 +40,7 @@ class CategorysController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -48,21 +49,21 @@ class CategorysController extends Controller
 //        $this->validate($request , [
 //            'Name' => 'required'
 //        ]);
-        try{
+        try {
             DB::beginTransaction();
 
-            $nameDeleteSpace = preg_replace('/\s+/', '-', $request->name);
+            $nameDeleteSpace = preg_replace('/\s+/', '-', $request->Name);
             DB::table('categorys')->insert([
-                'Name'=> $request->name,
-                'Unmarker_name'=> $nameDeleteSpace,
+                'Name' => $request->Name,
+                'Unmarker_name' => $nameDeleteSpace,
                 'updated_at' => $current_date,
                 'created_at' => $current_date
             ]);
-            dd($current_date);
+            DB::commit();
             return Redirect::route('admin.categorys.index')->with('success', 'The Categorys has been saved.');
 
-            DB::commit();
-        }catch (Exception $exception){
+
+        } catch (Exception $exception) {
             DB::rollBack();
             return Redirect::back()->with('error', 'The Categorys could not be saved. Please, try again!');
         }
@@ -73,7 +74,7 @@ class CategorysController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -84,7 +85,7 @@ class CategorysController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -95,25 +96,47 @@ class CategorysController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+
+    }
+
+    public function updateAjax(Request $request)
+    {
+        $current_date = Carbon::now('Asia/Ho_Chi_Minh');
+        try {
+            DB::beginTransaction();
+
+            $nameDeleteSpace = preg_replace('/\s+/', '-', $request->Name);
+            $data = $request->all();
+            $data['Unmarker_name'] = $nameDeleteSpace;
+            $categorys = TheLoai::findOrFail($request->id);
+            $categorys->update($data);
+            $categorys->save();
+            DB::commit();
+            return Redirect::route('admin.categorys.index')->with('success', 'The Categorys has been saved.');
+
+
+        } catch (Exception $exception) {
+            DB::rollBack();
+            return Redirect::back()->with('error', 'The Categorys could not be saved. Please, try again!');
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        DB::table('categorys')->where('id' , "=" , $id )->delete();
-        return Redirect::back()->with('success' , "Delete category Succeess");
+        DB::table('categorys')->where('id', "=", $id)->delete();
+        return Redirect::back()->with('success', "Delete category Succeess");
     }
 }
