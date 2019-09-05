@@ -51,12 +51,15 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function() {
     });
 
     Route::group(['prefix'=>'category'],function(){
+
         Route::get('list' , 'CategoryController@listCategory');
 
         Route::post('add_ajax' , 'CategoryController@add_ajax')->name('admin.category.add_ajax');
+
         Route::get('delete_category/{id}' ,  'CategoryController@delete');
 
         Route::get('edit_ajax/{id}' , 'CategoryController@edit_ajax');
+
         Route::post('edit_ajax' , 'CategoryController@edit_ajax')->name('admin.category.edit_ajax');
 
 
