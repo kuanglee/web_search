@@ -70,6 +70,27 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function() {
 
     });
 
+    // type new
+    Route::group(['prefix' => 'typenews'] , function (){
+
+        Route::get('/',['as' => 'admin.typenews.index', 'uses' => 'TypenewsController@index']);
+
+        Route::get('/add',['as' => 'admin.typenews.add', 'uses' => 'TypenewsController@create']);
+
+        Route::get('/show/{id}',[  'as' => 'admin.typenews.show', 'uses' => 'TypenewsController@show']);
+
+        Route::post('/store',['as' => 'admin.typenews.store', 'uses' => 'TypenewsController@store']);
+
+        Route::post('/updateAjax',['as' => 'admin.typenews.updateAjax', 'uses' => 'TypenewsController@updateAjax']);
+
+        Route::get('/edit/{id}',['as' => 'admin.typenews.edit', 'uses' => 'TypenewsController@edit']);
+
+        Route::patch('/update',['as' => 'admin.typenews.update', 'uses' => 'TypenewsController@update']);
+
+        Route::delete('/destroy/{id}',['as'=>'admin.typenews.destroy','uses'=>'TypenewsController@destroy']);
+
+    });
+
 
 
     Route::get('home' , function (){

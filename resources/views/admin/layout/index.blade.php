@@ -146,6 +146,37 @@
         })
     </script>
 
+    <script>
+        $('#edit-typenew-modal').on('show.bs.modal', function (event) {
+            // alert("dasd");
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var id2 = button.data('id2')
+
+            var Name = button.data('Name')
+            var Name2 = button.data('Name')
+            var kuang = button.data('kuang')
+            var TomTat = button.data('tomtat')
+            var NoiDung = button.data('noidung')
+            var idLoaitin = button.data('idloaitin')
+
+            // var dataShop = button.data('dataShop');
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id);
+            modal.find('.modal-body #id2').val(id2);
+            modal.find('.modal-body #Name').val(Name);
+            modal.find('.modal-body #kuang').val(kuang);
+            modal.find('.modal-body #noidung').val(NoiDung);
+            modal.find('.modal-body #tomtat').val(TomTat);
+            // modal.find('.modal-body #idloaitin').val(idLoaiTin);
+
+            $(event.currentTarget).find('.modal-body #idloaitin').val(idLoaitin);
+
+            var _token = $('input[name="_token"]').val();
+
+        })
+    </script>
+
     @yield('script')
 </body>
 
