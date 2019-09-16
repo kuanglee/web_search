@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TheLoai;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Exception;
@@ -33,7 +34,7 @@ class CategorysController extends Controller
      */
     public function create()
     {
-        //
+
 
     }
 
@@ -135,8 +136,16 @@ class CategorysController extends Controller
      */
     public function destroy($id)
     {
-        //
-        DB::table('categorys')->where('id', "=", $id)->delete();
-        return Redirect::back()->with('success', "Delete category Succeess");
+        try {
+            $theloai = TheLoai::findOrFail($id);
+            $theloai->tintuc()->delete();
+            $theloai->loaitin()->delete();
+            $theloai->delete();
+            return Redirect::back()->with('success', 'Delete category Succeess');
+        } catch (ModelNotFoundException $e) {
+
+            return Redirect::back()->with('error', 'The Shop could not be deleted. Please, try again.');
+        }
+
     }
 }

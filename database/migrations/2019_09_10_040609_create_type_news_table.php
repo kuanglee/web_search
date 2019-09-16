@@ -22,7 +22,7 @@ class CreateTypeNewsTable extends Migration
             $table->integer('Hinh')->nullable();
             $table->integer('SoLuotXem')->nullable();
             $table->integer('idLoaiTin')->unsigned();
-            $table->foreign('idLoaiTin')->references('id')->on('categorys');
+            $table->foreign('idLoaiTin')->references('id')->on('loaitin');
             $table->timestamps();
         });
     }

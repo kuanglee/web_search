@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LoaiTin;
 use Illuminate\Http\Request;
 use App\Models\TheLoai;
 use App\Models\TypeNew;
@@ -20,8 +21,15 @@ class TypenewsController extends Controller
     public function index()
     {
         $categorys = TheLoai::all();
-        $typenews = DB::table('type_news')->get();
-        return view('admin/typenew/list', compact('typenews', 'categorys'));
+        $loaitin = LoaiTin::all();
+        $theloai = TypeNew::findOrFail(2);
+//        dd($theloai->loaitin);
+
+
+        $typenews = TypeNew::orderBy('id','DESC')->get();
+//dd($typenews);
+
+        return view('admin/typenew/list', compact('typenews', 'categorys' , 'loaitin'));
     }
 
     /**

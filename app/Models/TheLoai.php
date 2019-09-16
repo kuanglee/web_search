@@ -11,6 +11,16 @@ class TheLoai extends Model
 
     public $timestamps = true;
 
+    public function loaitin()
+    {
+        return $this->hasMany('App\Models\LoaiTin', 'idTheLoai', 'id');
+    }
+
+    public function tintuc()
+    {
+        return $this->hasManyThrough('App\Models\TypeNew', 'App\Models\LoaiTin', 'idTheLoai', 'idLoaiTin', 'id');
+    }
+
     protected $fillable = [
         'id',
         'Name',

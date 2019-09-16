@@ -22,6 +22,7 @@ Route::get('logout' , function (){
 });
 
 
+Route::get('/Switcher_Language/{locale}','HomeController@Switcher_Language');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
@@ -91,7 +92,44 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function() {
 
     });
 
+    // loai tin
+    Route::group(['prefix' => 'loaitin'] , function (){
 
+        Route::get('/',['as' => 'admin.loaitin.index', 'uses' => 'LoaiTinController@index']);
+
+        Route::get('/add',['as' => 'admin.loaitin.add', 'uses' => 'LoaiTinController@create']);
+
+        Route::get('/show/{id}',[  'as' => 'admin.loaitin.show', 'uses' => 'LoaiTinController@show']);
+
+        Route::post('/store',['as' => 'admin.loaitin.store', 'uses' => 'LoaiTinController@store']);
+
+
+        Route::get('/edit/{id}',['as' => 'admin.loaitin.edit', 'uses' => 'LoaiTinController@edit']);
+
+        Route::patch('/update/{id}',['as' => 'admin.loaitin.update', 'uses' => 'LoaiTinController@update']);
+
+        Route::delete('/destroy/{id}',['as'=>'admin.typenews.destroy','uses'=>'LoaiTinController@destroy']);
+
+    });
+
+    // user
+    Route::group(['prefix' => 'users'] , function (){
+
+        Route::get('/',['as' => 'admin.users.index', 'uses' => 'UsersController@index']);
+
+        Route::get('/add',['as' => 'admin.users.add', 'uses' => 'UsersController@create']);
+
+        Route::get('/show/{id}',[  'as' => 'admin.users.show', 'uses' => 'UsersController@show']);
+
+        Route::post('/store',['as' => 'admin.users.store', 'uses' => 'UsersController@store']);
+
+        Route::get('/edit/{id}',['as' => 'admin.users.edit', 'uses' => 'UsersController@edit']);
+
+        Route::patch('/update/{id}',['as' => 'admin.users.update', 'uses' => 'UsersController@update']);
+
+        Route::delete('/destroy/{id}',['as'=>'admin.users.destroy','uses'=>'UsersController@destroy']);
+
+    });
 
     Route::get('home' , function (){
        return view('admin.home');

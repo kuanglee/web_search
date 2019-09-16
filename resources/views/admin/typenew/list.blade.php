@@ -54,7 +54,7 @@
                             <td>{{$type->NoiDung}}</td>
                             <td>{{$type->Hinh}}</td>
                             <td>{{$type->SoLuotXem}}</td>
-                            <td>{{$type->idLoaiTin}}</td>
+                            <td>{{$type->loaitin->Ten}}</td>
                             <td>{{$type->created_at}}</td>
                             <td>{{$type->updated_at}}</td>
                             <td>
@@ -74,7 +74,7 @@
                                                                                      data-kuang="{{$type->TieuDe}}"
                                                                                      data-noidung="{{$type->NoiDung}}"
                                                                                      data-tomtat="{{$type->TomTat}}"
-                                                                                     data-idloaitin = "{{$type->idLoaiTin}}"
+                                                                                     data-idloaitin="{{$type->idLoaiTin}}"
                                                                                      data-toggle="modal"
                                                                                      data-target="#edit-typenew-modal">Edit</a>
                             </td>
@@ -126,9 +126,9 @@
 
                         <div class="form-group">
                             <label for="title">Loại tin</label>
-                            <select class="form-control" id="idLoaiTin" name="idLoaiTin" >
-                                @foreach($categorys as $category)
-                                    <option value="{{$category->id}}">{{$category->Name}}</option>
+                            <select class="form-control" id="idLoaiTin" name="idLoaiTin">
+                                @foreach($loaitin as $lt)
+                                    <option value="{{$lt->id}}">{{$lt->Ten}}</option>
                                 @endforeach
 
                             </select>
@@ -195,9 +195,9 @@
 
                                 <div class="form-group">
                                     <label for="title">Loại tin</label>
-                                    <select class="form-control" id="idloaitin" name="idLoaiTin" >
-                                        @foreach($categorys as $category)
-                                            <option value="{{$category->id}}">{{$category->Name}}</option>
+                                    <select class="form-control" id="idloaitin" name="idLoaiTin">
+                                        @foreach($loaitin as $lt)
+                                            <option value="{{$lt->id}}">{{$lt->Ten}}</option>
                                         @endforeach
 
                                     </select>
@@ -208,8 +208,6 @@
                                     <label class="col-form-label" for="modal-input-name">Hình</label>
                                     <input type="file" class="custom-file-input" id="Hinh" name="Hinh">
                                 </div>
-
-
 
 
                             </div>

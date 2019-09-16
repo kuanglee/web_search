@@ -90,7 +90,7 @@
                 <form action="{{url('admin/categorys/store')}}" method="post">
                     {{csrf_field()}}
                     <div class="modal-body">
-                        <div class="form-group">
+                        <div class="form-group" >
                             <label for="title">Name</label>
                             <input type="text" class="form-control" name="Name" id="Name">
                         </div>

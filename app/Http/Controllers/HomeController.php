@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+use Redirect;
 
 class HomeController extends Controller
 {
@@ -25,4 +27,11 @@ class HomeController extends Controller
     {
         return view('login');
     }
+
+    public function Switcher_Language(Request $request, $lang)
+    {
+        Session::put('locale', $lang);
+        return redirect::back();
+    }
+
 }

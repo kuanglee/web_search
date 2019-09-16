@@ -22,4 +22,8 @@ class TypeNew extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function loaitin(){
+        return $this->belongsTo('App\Models\LoaiTin' , 'idLoaiTin' , 'id');
+    }
 }
