@@ -10,13 +10,26 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public $timestamps = true;
+
+
+    public function roles(){
+        return $this->belongsToMany(Role::class);
+
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'id',
+        'name',
+        'email',
+        'address',
+        'role_id',
+        'password'
     ];
 
     /**

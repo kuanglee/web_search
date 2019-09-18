@@ -77,7 +77,6 @@
                 var query = $(this).val();
                 if(query != '')
                 {
-
                     var _token = $('input[name="_token"]').val();
                     var id = $(".city").val();
                     $.ajax({
@@ -115,51 +114,69 @@
             })
         })
 
-
     </script>
 
     <script>
-        $('#edit_category').on('show.bs.modal', function (event) {
-
-
-
-
-             // alert("dsafd");
+        $('#edit-modal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
-            var id2 = button.data('id2');
-
-            var TenKhongDau = button.data('TenKhongDau_edit')
-            var Ten = button.data('name')
+            var Unmarker_name = button.data('Unmarker_name')
+            var Name = button.data('Name')
+            var Name2 = button.data('Name')
+            var kuang = button.data('kuang')
+            // alert(Unmarker_name)
             // var dataShop = button.data('dataShop');
             var modal = $(this)
-            console.log(Ten);
-
             modal.find('.modal-body #id').val(id);
-            modal.find('.modal-body #TenKhongDau_edit').val(TenKhongDau);
-            modal.find('.modal-body #name').val(Ten);
-            modal.find('.modal-body #id2').val(id2);
+            modal.find('.modal-body #Name').val(Name);
+            modal.find('.modal-body #kuang').val(kuang);
             var _token = $('input[name="_token"]').val();
             {{--$.ajax({--}}
-                {{--url:"{{'users/fetch'}}",--}}
-                {{--type : "post",--}}
-
-                {{--dataType:"text",--}}
-                {{--// data:{query:query, _token:_token , id:id},--}}
-                {{--data : {--}}
-                    {{--_token:_token , id:id--}}
-                {{--},--}}
-                {{--success : function (result){--}}
-                    {{--$('#result').html(result);--}}
-                {{--}--}}
+            {{--url:"{{'users/fetch'}}",--}}
+            {{--type : "post",--}}
+            {{--dataType:"text",--}}
+            {{--// data:{query:query, _token:_token , id:id},--}}
+            {{--data : {--}}
+            {{--_token:_token , id:id--}}
+            {{--},--}}
+            {{--success : function (result){--}}
+            {{--$('#result').html(result);--}}
+            {{--}--}}
             {{--});--}}
+        })
+    </script>
+
+    <script>
+        $('#edit-typenew-modal').on('show.bs.modal', function (event) {
+            // alert("dasd");
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var id2 = button.data('id2')
+
+            var Name = button.data('Name')
+            var Name2 = button.data('Name')
+            var kuang = button.data('kuang')
+            var TomTat = button.data('tomtat')
+            var NoiDung = button.data('noidung')
+            var idLoaitin = button.data('idloaitin')
+
+            // var dataShop = button.data('dataShop');
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id);
+            modal.find('.modal-body #id2').val(id2);
+            modal.find('.modal-body #Name').val(Name);
+            modal.find('.modal-body #kuang').val(kuang);
+            modal.find('.modal-body #noidung').val(NoiDung);
+            modal.find('.modal-body #tomtat').val(TomTat);
+            // modal.find('.modal-body #idloaitin').val(idLoaiTin);
+
+            $(event.currentTarget).find('.modal-body #idloaitin').val(idLoaitin);
+
+            var _token = $('input[name="_token"]').val();
 
         })
-        // sadsaddsad
-
-
-//////////////////////////////
     </script>
+
     @yield('script')
 </body>
 

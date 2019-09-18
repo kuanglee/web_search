@@ -16,7 +16,7 @@
                 <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li>
-                <a href="admin/dictionary"><i class="fa fa-bar-chart-o fa-fw"></i> Dictionary<span class="fa arrow"></span></a>
+                <a href="admin/dictionary"><i class="glyphicon glyphicon-book"></i> Dictionary<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="admin/dictionary/add">Add Dictionary</a>
@@ -36,7 +36,7 @@
                 <a href="admin/theloai/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Thể loại<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="admin/category/list">Danh Sách Thể loại</a>
+                        <a href="{{url('admin/categorys')}}">Danh Sách Thể loại</a>
                     </li>
                     <li>
                         <a href="admin/theloai/them">Thêm thể loại</a>
@@ -46,23 +46,23 @@
             </li>
 
             <li>
-                <a href="admin/loaitin/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Loại tin<span class="fa arrow"></span></a>
+                <a href="admin/loaitin/danhsach"><i class="glyphicon glyphicon-credit-card"></i> Loại tin<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="admin/loaitin/danhsach">Danh Sách Loại tin</a>
+                        <a href="admin/loaitin/">Danh Sách Loại tin</a>
                     </li>
                     <li>
-                        <a href="admin/loaitin/them">Thêm Loại tin</a>
+                        <a href="admin/loaitin/add">Thêm Loại tin</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
 
             <li>
-                <a href="admin/tintuc/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Tin Tức<span class="fa arrow"></span></a>
+                <a href="admin/typenews"><i class="fa fa-newspaper-o"></i> Tin Tức<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="admin/tintuc/danhsach">Danh Sách Tin tức</a>
+                        <a href="admin/typenews">Danh Sách Tin tức</a>
                     </li>
                     <li>
                         <a href="admin/tintuc/them">Thêm Tin tức</a>
@@ -72,10 +72,23 @@
             </li>
 
             <li>
-                <a href="admin/slide/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Slide<span class="fa arrow"></span></a>
+                <a href="admin/slide/danhsach"><i class="fa fa-sliders"></i> Slide<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="admin/slide/danhsach">Danh Sách Tin tức</a>
+                    </li>
+                    <li>
+                        <a href="admin/slide/them">Thêm Tin tức</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+
+            <li>
+                <a href="admin/roles"><i class="glyphicon glyphicon-tower"></i> Roles<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{url("admin/roles")}}">Danh Sách Roles</a>
                     </li>
                     <li>
                         <a href="admin/slide/them">Thêm Tin tức</a>
@@ -91,7 +104,7 @@
                 <a href="admin/user/danhsach"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">List Account</a>
+                        <a href="{{url('admin/users')}}">List Account</a>
                     </li>
                     <li>
                         <a href="#">Add Account</a>
