@@ -55,6 +55,21 @@
                                    placeholder="Xin vui lòng nhập password xác thực "/>
                         </div>
 
+                        <div class="form-group">
+                            <label for="inputrole" class="control-label"><?= __("action.user.Role") ?></label>
+                            <div class="input-group date">
+                                <select multiple="multiple" required name="listRoleId[]" class="form-control form-control-lg">
+                                    @foreach($roles as $key=>$role)
+                                        <option name="role_id" value="{{$role->id}}">{{$role->name}}</option>
+                                    @endforeach
+                                </select>
+                                <span class="input-group-addon">
+                           <span class="glyphicon glyphicon-chevron-down"></span>
+                        </span>
+
+                            </div>
+                        </div>
+
                         <button type="submit" class="btn btn-default">Thêm</button>
                         <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>

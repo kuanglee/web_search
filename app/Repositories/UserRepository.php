@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Repository;
+namespace App\Repositories;
 
 use JasonGuru\LaravelMakeRepository\Repository\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
@@ -25,9 +25,17 @@ class UserRepository extends BaseRepository
         //return YourModel::class;
     }
 
+    public function getRole(){
+        return $this->model->all();
+    }
+
     public function all(array $columns = ['*'])
     {
         return $this->model->all()->sortByDesc("id");
+    }
+
+    public function getUser($id){
+        return $this->model->find($id);
     }
 
 

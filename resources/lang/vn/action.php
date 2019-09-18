@@ -13,6 +13,22 @@ return [
     |
     */
 
-    'language' => "VN"
+    'language' => "VN",
+    'user' => [
+        'placeholder' => [
+            'name' => 'Xin vui lòng nhập tên',
+
+
+        ],
+        'name' => 'Tên',
+        'email' => 'Email',
+        'password' => 'Mật khẩu' ,
+        'address' => 'Địa chỉ',
+        'submit' => 'Chỉnh sửa' ,
+        'clear' => 'Làm mới',
+        'user_edit' => 'Sửa người dùng',
+        'Role' => 'Vai trò'
+
+    ],
 
 ];

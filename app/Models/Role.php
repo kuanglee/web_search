@@ -17,8 +17,16 @@ class Role extends Model
         'updated_at'
 
     ];
+    public $timestamp = true;
+
 
     public function users(){
         return $this->belongsToMany(User::class);
     }
+
+    public function permissions(){
+        return $this->belongsToMany(Permission::class);
+    }
+
+
 }

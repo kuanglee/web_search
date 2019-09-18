@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
 
 class Localization
 {
@@ -18,6 +19,9 @@ class Localization
     {
         if (session()->has('locale')) {
             App::setLocale(session()->get('locale'));
+        }
+        else {
+            App::setLocale(Config::get('app.fallback_locale'));
         }
         return $next($request);
     }
