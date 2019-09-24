@@ -33,6 +33,8 @@ Route::get('/Switcher_Language/{locale}', 'HomeController@Switcher_Language');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
+
+
     Route::group(['prefix' => 'dictionary'], function () {
 
         Route::get('add', 'DictionaryController@getView');
@@ -156,7 +158,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         });
     });
 
-    Route::get('home', function () {
-        return view('admin.home');
-    });
+    Route::get('/home', ['as' => 'admin.master.index', 'uses' => 'MasterController@index']);
+
 });

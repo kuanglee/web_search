@@ -59,6 +59,12 @@ return [
         ],
 
     ],
+    'total_users' => 'Total Users',
+    'tong_quan' => 'Overview',
+    'total_categories' => 'Total Categories',
+    'type_news' => 'Total Type News' ,
+    'total_news' => 'Total News',
+    'Dashboard' => "DashBoard"
 
 
 ];

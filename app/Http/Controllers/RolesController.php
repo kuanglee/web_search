@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Repositories\RoleRepository;
 use App\Repositories\UserRepository;
 use App\User;
-use Egulias\EmailValidator\Validation\DNSCheckValidation;
 use Illuminate\Http\Request;
 use App\Models\Role;
 use Illuminate\Database\Eloquent\Model;
@@ -71,12 +70,26 @@ class RolesController extends Controller
         $listRoleUser = $this->role->getListRoleUser($id);
         $listPermissionRole = $this->role->getListRolePermission($id);
 
-        return view('admin.roles.edit', compact('roles', 'id', 'listUser', 'listPermission' , 'listRoleUser' , 'listPermissionRole'));
+        return view('admin.roles.edit', compact('roles', 'id', 'listUser', 'listPermission', 'listRoleUser', 'listPermissionRole'));
     }
 
 
     public function update(Request $request, $id)
     {
+//        dd($request);
+        try {
+            DB::beginTransaction();
+            $role = Role::findOrFail($id);
+            $role->update($request->all());
+            $listPermissionOld = $role->permissions()->allRelatedIds()->toArray();
+            $role->permissions()->detach($listPermissionOld);
+            $role->permissions()->attach($request->listPermissionId);
+            DB::commit();
+            return Redirect::route('admin.roles.index')->with('success', 'The Roles has been saved.');
+        } catch (Exception $exception) {
+            DB::rollBack();
+            return Redirect::back()->with('error', 'The Roles could not be saved. Please, try again!');
+        }
 
     }
 

@@ -18,6 +18,10 @@
     <!-- Custom CSS -->
     <link href="admin_asset/dist/css/sb-admin-2.css" rel="stylesheet">
 
+    <link href="admin_asset/dist/css/styles.css" rel="stylesheet">
+
+
+
     <!-- Custom Fonts -->
     <link href="admin_asset/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -30,6 +34,8 @@
     <link href="admin_asset/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
 
     <script type="text/javascript" language="javascript" src="admin_asset/ckeditor/ckeditor.js" ></script>
+
+    <script src="{!!url('admin_asset/dist/js/lumino.glyphs.js')!!}"></script>
 
 
 </head>

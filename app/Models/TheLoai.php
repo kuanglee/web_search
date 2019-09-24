@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class TheLoai extends Model
 {
-    //
+
+
     protected $table = 'categorys';
 
     public $timestamps = true;

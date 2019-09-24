@@ -24,9 +24,9 @@
                             {{session('error')}}
                         </div>
                     @endif
-                    <?= Form::open(['url' => '/admin/roles/update', "id" => "frmValidate", "enctype" => "multipart/form-data"]); ?>
+                    <?= Form::open(['url' => '/admin/roles/update/' . $id, "id" => "frmValidate", "enctype" => "multipart/form-data"]); ?>
                     @csrf()
-                    @method('POST')
+                    @method('PATCH')
                     <div class="form-group">
                         <label for="inputName" class="control-label"> {{trans('action.role.name')}}</label>
                         <input type="text" name="name" class="form-control" required
@@ -38,7 +38,7 @@
                     <div class="form-group">
                         <label for="inputName" class="control-label"> {{trans('action.role.description')}}</label>
                         <input type="text" name="description" class="form-control" required
-                               value="{!! old('description' ,isset($roles) ? $roles->email : null) !!}"
+                               value="{!! old('description' ,isset($roles) ? $roles->description : null) !!}"
                                placeholder="{{trans('action.role.placeholder.description')}}">
                         <p class="help-block" style="color:red;">{!! $errors->first('name')!!}</p>
                     </div>
