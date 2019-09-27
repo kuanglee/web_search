@@ -21,7 +21,7 @@
         <!-- Weather -->
         <li class="dropdown divided temperature-main the-weather">
             <a class="temperature-icon position-left">
-                <div class="weather-icon" style="padding-top: 0px;">
+                <div class="weather-icon" style="padding-top: 0px ; margin-left: 200px" >
                     <i class="wi" id="main-icon" style="font-size: 20px;"></i>
                 </div>
             </a>

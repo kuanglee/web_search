@@ -59,12 +59,38 @@ return [
         ],
 
     ],
+    'shop' => [
+        'name' => 'Name',
+        'display_name' => 'Display Name',
+        'description' => 'Description',
+        'created_at' => 'Created at' ,
+        'updated_at' => 'Updated at',
+        'id' => 'ID' ,
+        'add' => 'Add' ,
+        'delete' => 'DELETE' ,
+        'edit' => 'EDIT',
+        'Permission' => 'Permission',
+        'user' => 'User',
+        'address' => 'address',
+        'placeholder' => [
+            'name' => 'Please enter a name',
+            'email' => 'Please enter a email',
+            'description' => 'Please enter a description',
+            'display_name' => 'Please enter a display name',
+            'confirm_password' => 'Please enter a corfirm password'
+
+
+        ],
+
+    ],
     'total_users' => 'Total Users',
     'tong_quan' => 'Overview',
     'total_categories' => 'Total Categories',
     'type_news' => 'Total Type News' ,
     'total_news' => 'Total News',
-    'Dashboard' => "DashBoard"
+    'Dashboard' => "DashBoard",
+    'Search' => 'Search',
+    'Created' => 'Created'
 
 
 ];

@@ -76,7 +76,6 @@ class RolesController extends Controller
 
     public function update(Request $request, $id)
     {
-//        dd($request);
         try {
             DB::beginTransaction();
             $role = Role::findOrFail($id);

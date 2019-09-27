@@ -11,6 +11,8 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
 
     <!-- MetisMenu CSS -->
     <link href="admin_asset/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
@@ -19,6 +21,12 @@
     <link href="admin_asset/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <link href="admin_asset/dist/css/styles.css" rel="stylesheet">
+
+    <link href="admin_asset/daterangepicker-master/daterangepicker.css" rel="stylesheet">
+
+    <link href="admin_asset/vendor/daterangepicker/daterangepicker.css" rel="stylesheet">
+
+
 
 
 
@@ -35,7 +43,16 @@
 
     <script type="text/javascript" language="javascript" src="admin_asset/ckeditor/ckeditor.js" ></script>
 
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+
+
+
     <script src="{!!url('admin_asset/dist/js/lumino.glyphs.js')!!}"></script>
+
+    <link href="{{asset('admin_asset/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 
 
 </head>
@@ -65,7 +82,10 @@
 
     <!-- DataTables JavaScript -->
     <script src="admin_asset/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
+
     <script src="admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>

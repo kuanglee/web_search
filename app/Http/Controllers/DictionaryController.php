@@ -40,8 +40,6 @@ class DictionaryController extends Controller
     public function getResultSearch($id, $key)
     {
         $data = DB::table('dictionary')->find($id);
-        //Log::debug("gia tri key " . $key);
-//        dd($data);
         return view('admin.dictionary.resultSearch', ['data' => $data, 'key' => $key]);
     }
 

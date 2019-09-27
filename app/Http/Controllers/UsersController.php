@@ -65,7 +65,7 @@ class UsersController extends Controller
 
     }
 
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
 
         if ($request->password == $request->confirm_password) {

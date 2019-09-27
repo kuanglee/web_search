@@ -23,31 +23,16 @@ class TypenewsController extends Controller
         $categorys = TheLoai::all();
         $loaitin = LoaiTin::all();
         $theloai = TypeNew::findOrFail(2);
-//        dd($theloai->loaitin);
-
-
         $typenews = TypeNew::orderBy('id','DESC')->get();
-//dd($typenews);
 
         return view('admin/typenew/list', compact('typenews', 'categorys' , 'loaitin'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $current_date = Carbon::now('Asia/Ho_Chi_Minh');
@@ -68,7 +53,6 @@ class TypenewsController extends Controller
 
     function utf8convert($str)
     {
-
         if (!$str) return false;
 
         $utf8 = array(
@@ -108,7 +92,6 @@ class TypenewsController extends Controller
         return $text;
     }
 
-
     public function updateAjax(Request $request)
     {
         $current_date = Carbon::now('Asia/Ho_Chi_Minh');
@@ -132,46 +115,21 @@ class TypenewsController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         DB::table('type_news')->where('id', "=", $id)->delete();
