@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use App\Repositories\RoleRepository;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
@@ -65,7 +66,7 @@ class UsersController extends Controller
 
     }
 
-    public function update(UserRequest $request, $id)
+    public function update(Request $request, $id)
     {
 
         if ($request->password == $request->confirm_password) {
@@ -102,6 +103,32 @@ class UsersController extends Controller
         } catch (Exception $exception) {
             DB::rollBack();
             return Redirect::back()->with('error', 'The Users could not be saved. Please, try again!');
+        }
+    }
+
+    public function profile(){
+        $userProfile = $this->model->getUserProfile();
+//        dd($userProfile);
+        return view('admin.users.profile' , compact('userProfile'));
+    }
+
+    public function profileStore(Request $request){
+        if ($request->password == $request->confirm_password) {
+            try {
+                DB::beginTransaction();
+                $user = User::findOrFail($id);
+                $user->update($request->all());
+                $listRoleOld = $user->roles()->allRelatedIds()->toArray();
+                $user->roles()->detach($listRoleOld);
+                $user->roles()->attach($request->listRoleId);
+                DB::commit();
+                return Redirect::route('admin.users.index')->with('success', 'The Users has been saved.');
+            } catch (Exception $exception) {
+                DB::rollBack();
+                return Redirect::back()->with('error', 'The Users could not be saved. Please, try again!');
+            }
+        } else {
+            return Redirect::back()->with('error', 'Password and confirm password does not match .');
         }
     }
 

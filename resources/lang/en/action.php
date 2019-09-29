@@ -60,7 +60,11 @@ return [
 
     ],
     'shop' => [
+        'shop' => "Shop",
+        'list_shops'=> 'List Shops',
         'name' => 'Name',
+        'list_shops' => 'List Shop',
+        'add_shop' => 'Add Shop',
         'display_name' => 'Display Name',
         'description' => 'Description',
         'created_at' => 'Created at' ,

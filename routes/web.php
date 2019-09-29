@@ -76,6 +76,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('/edit/{id}', ['as' => 'admin.loaitin.edit', 'uses' => 'LoaiTinController@edit']);
         Route::patch('/update/{id}', ['as' => 'admin.loaitin.update', 'uses' => 'LoaiTinController@update']);
         Route::delete('/destroy/{id}', ['as' => 'admin.typenews.destroy', 'uses' => 'LoaiTinController@destroy']);
+
     });
     // use
     Route::group(['prefix' => 'users'], function () {
@@ -86,17 +87,21 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('/edit/{id}', ['as' => 'admin.users.edit', 'uses' => 'UsersController@edit']);
         Route::patch('/update/{id}', ['as' => 'admin.users.update', 'uses' => 'UsersController@update']);
         Route::delete('/destroy/{id}', ['as' => 'admin.users.destroy', 'uses' => 'UsersController@destroy']);
+        Route::get('/profile', ['as' => 'admin.uses.index', 'uses' => 'UsersController@profile']);
+        Route::post('/profile-update', ['as' => 'admin.uses.profile', 'uses' => 'UsersController@profileStore']);
     });
     Route::group(['middleware' => ['checkAcl:user-add']], function () {
         // user
         Route::group(['prefix' => 'roles'], function () {
             Route::get('/', ['as' => 'admin.roles.index', 'uses' => 'RolesController@index']);
+
             Route::get('/add', ['as' => 'admin.roles.add', 'uses' => 'RolesController@create']);
             Route::get('/show/{id}', ['as' => 'admin.roles.show', 'uses' => 'RolesController@show']);
             Route::post('/store', ['as' => 'admin.roles.store', 'uses' => 'RolesController@store']);
             Route::get('/edit/{id}', ['as' => 'admin.roles.edit', 'uses' => 'RolesController@edit']);
             Route::patch('/update/{id}', ['as' => 'admin.roles.update', 'uses' => 'RolesController@update']);
             Route::delete('/destroy/{id}', ['as' => 'admin.roles.destroy', 'uses' => 'RolesController@destroy']);
+
         });
     });
     // shops

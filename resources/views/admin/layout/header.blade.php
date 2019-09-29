@@ -59,7 +59,7 @@
             </a>
             <ul class="dropdown-menu dropdown-user">
                 @if(Auth::user())
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i>{{Auth::user()->name}}</a>
+                    <li><a href="{{url('/admin/users/profile')}}"><i class="fa fa-user fa-fw"></i>{{Auth::user()->name}}</a>
                     </li>
 
                     <li class="divider"></li>
